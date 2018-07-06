@@ -10,5 +10,7 @@ CREATE TABLE `accessoiresshops` (
 );
 
 INSERT INTO `accessoiresshops` (store, item, price) VALUES
-	('ammunation','yusuf',3000)
+	('ammunation','yusuf',3000),
+	('ammunation','grip',3000),
+	('ammunation','silencieux',3000)
 ;
