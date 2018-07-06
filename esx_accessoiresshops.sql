@@ -1,6 +1,6 @@
 USE `essentialmode`;
 
-CREATE TABLE `illegalshops` (
+CREATE TABLE `accessoiresshops` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`store` varchar(100) NOT NULL,
 	`item` varchar(100) NOT NULL,
@@ -9,6 +9,6 @@ CREATE TABLE `illegalshops` (
 	PRIMARY KEY (`id`)
 );
 
-INSERT INTO `illegalshops` (store, item, price) VALUES
-	('ballas','handcuff',3000)
+INSERT INTO `accessoiresshops` (store, item, price) VALUES
+	('ammunation','yusuf',3000)
 ;
