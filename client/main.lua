@@ -15,7 +15,7 @@ Citizen.CreateThread(function()
 	Citizen.Wait(5000)
 	PlayerData = ESX.GetPlayerData()
 
-	ESX.TriggerServerCallback('esx_illegalshops:requestDBItems', function(ShopItems)
+	ESX.TriggerServerCallback('esx_accessoires_armes:requestDBItems', function(ShopItems)
 		for k,v in pairs(ShopItems) do
 			Config.Zones[k].Items = v
 		end
@@ -58,7 +58,7 @@ function OpenShopMenu(zone)
 			}
 		}, function(data2, menu2)
 			if data2.current.value == 'yes' then
-				TriggerServerEvent('esx_illegalshops:buyItem', data.current.item, data.current.value, zone)
+				TriggerServerEvent('esx_accessoires_armes:buyItem', data.current.item, data.current.value, zone)
 			end
 
 			menu2.close()
@@ -73,7 +73,7 @@ function OpenShopMenu(zone)
 	end)
 end
 
-AddEventHandler('esx_illegalshops:hasEnteredMarker', function(zone)
+AddEventHandler('esx_accessoires_armes:hasEnteredMarker', function(zone)
 
 	CurrentAction     = 'shop_menu'
 	CurrentActionMsg  = _U('press_menu')
@@ -81,7 +81,7 @@ AddEventHandler('esx_illegalshops:hasEnteredMarker', function(zone)
 
 end)
 
-AddEventHandler('esx_illegalshops:hasExitedMarker', function(zone)
+AddEventHandler('esx_accessoires_armes:hasExitedMarker', function(zone)
 
 	CurrentAction = nil
 	ESX.UI.Menu.CloseAll()
@@ -90,7 +90,10 @@ end)
 
 --SPAWN PNJ
 local PNJ = {
-	{id=1, Name=PnjWeed, VoiceName="GENERIC_INSULT_HIGH", Ambiance="AMMUCITY", Weapon=1649403952, modelHash="g_m_m_chicold_01", x = -1061.6938476563, y = -1663.5811767578, z = 3.5811767578, heading=40.947692},
+	{id=1, Name=PnjWeed, VoiceName="GENERIC_INSULT_HIGH", Ambiance="AMMUCITY", Weapon=1649403952, modelHash="u_m_o_taphillbilly", x = 253.39140319824, y = -51.694488525391, z = 68.941131591797, heading=70.6424179},
+	{id=1, Name=PnjWeed, VoiceName="GENERIC_INSULT_HIGH", Ambiance="AMMUCITY", Weapon=1649403952, modelHash="s_m_y_grip_01", x = 250.86462402344, y = -45.510391235352, z = 68.941131591797, heading=159.692779},
+	{id=1, Name=PnjWeed, VoiceName="GENERIC_INSULT_HIGH", Ambiance="AMMUCITY", Weapon=1649403952, modelHash="u_m_o_taphillbilly", x = -330.66320800781, y = 6085.8701171875, z = 30.454788208008, heading=224.466674},
+	{id=1, Name=PnjWeed, VoiceName="GENERIC_INSULT_HIGH", Ambiance="AMMUCITY", Weapon=1649403952, modelHash="s_m_y_grip_01", x = -331.24963378906, y = 6079.25, z = 30.454788208008, heading=308.27398681641},
 }
 
 Citizen.CreateThread(function()
@@ -108,7 +111,7 @@ Citizen.CreateThread(function()
 			end
 
       PNJ[i].id = CreatePed(28, PNJ[i].modelHash, PNJ[i].x, PNJ[i].y, PNJ[i].z, PNJ[i].heading, false, false)
-      TaskStartScenarioInPlace(PNJ[i].id,'WORLD_HUMAN_DRUG_DEALER', 0 , false )
+      TaskStartScenarioInPlace(PNJ[i].id,'WORLD_HUMAN_CLIPBOARD', 0 , false )
     end
 	end
   generalLoaded = true
@@ -129,7 +132,7 @@ Citizen.CreateThread(function()
 		EndTextCommandSetBlipName(blip)
 		end
 	end
-end)
+end) --]]
 
 -- Display markers
 Citizen.CreateThread(function()
@@ -144,7 +147,7 @@ Citizen.CreateThread(function()
       end
     end
   end
-end) --]]
+end) 
 
 -- Enter / Exit marker events
 Citizen.CreateThread(function()
@@ -166,11 +169,11 @@ Citizen.CreateThread(function()
 		end
 		if isInMarker and not HasAlreadyEnteredMarker then
 			HasAlreadyEnteredMarker = true
-			TriggerEvent('esx_illegalshops:hasEnteredMarker', currentZone)
+			TriggerEvent('esx_accessoires_armes:hasEnteredMarker', currentZone)
 		end
 		if not isInMarker and HasAlreadyEnteredMarker then
 			HasAlreadyEnteredMarker = false
-			TriggerEvent('esx_illegalshops:hasExitedMarker', LastZone)
+			TriggerEvent('esx_accessoires_armes:hasExitedMarker', LastZone)
 		end
 	end
 end)

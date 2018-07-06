@@ -1,32 +1,17 @@
 Config              = {}
 Config.DrawDistance = 100
-Config.Size         = {x = 1.5, y = 1.5, z = 1.5}
-Config.Color        = {r = 0, g = 128, b = 255}
-Config.Type         = 1
+Config.Size         = {x = 1.3, y = 1.3, z = 1.3}
+Config.Color        = {r = 0, g = 0, b = 255}
+Config.Type         = 27
 Config.Locale       = 'fr'
 
 Config.Zones = {
 
-	ballas = {
+	ammunation = {
 		Items = {},
 		Pos = {
-			{x = -1062.10559,  y = -1662.89355, z = 3.562}
-		}
-	},
-
-	Vagos = {
-		Items = {},
-		Pos = {
-			--{x = 1135.808,  y = -982.281,  z = 45.415},
-			--{x = -559.906,  y = 287.093,   z = 81.176}  --Bahamamas
-		}
-	},
-
-	Triades = {
-		Items = {},
-		Pos = {
-			--{x = -48.519,   y = -1757.514, z = 28.421},
-			--{x = 1698.388,  y = 4924.404,  z = 41.063}
+			{x = 249.24169921875,  y = -46.631763458252, z = 68.941093444824},
+			{x = -329.42037963867,  y = 6079.31733828125, z = 30.454782485962}
 		}
 	}
 }

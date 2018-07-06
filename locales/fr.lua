@@ -1,6 +1,6 @@
 Locales['fr'] = {
-	['shop'] = 'revendeur illégal',
-	['shops'] = 'revendeurs illégaux',
+	['shop'] = 'marchand d\'accessoire',
+	['shops'] = 'marchands d\'armes',
 	['press_menu'] = 'appuyez sur ~INPUT_CONTEXT~ pour accéder au magasin.',
 	['bought'] = 'vous avez acheté ~y~%sx~s~ ~b~%s~s~ pour ~r~€%s~s~',
 	['not_enough'] = 'vous n\'avez ~r~pas assez~s~ d\'argent: %s',
